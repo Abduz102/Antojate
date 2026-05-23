@@ -1,12 +1,10 @@
 // ============================================
-// REPOSITORIO DE PRODUCTOS
-// Single Responsibility Principle
+// REPOSITORIO DE PRODUCTOS MEJORADO
 // ============================================
 
 class ProductRepository {
     constructor() {
         this.productos = [
-            // Panes
             { 
                 id: 1, 
                 nombre: 'Pan Integral', 
@@ -15,7 +13,7 @@ class ProductRepository {
                 emoji: '🍞', 
                 descuento: 0, 
                 unidadMinima: 1,
-                descripcion: 'Pan integral 100% natural'
+                descripcion: 'Pan integral 100% natural, hecho con granos enteros frescos. Perfecto para desayunar.'
             },
             { 
                 id: 2, 
@@ -25,7 +23,7 @@ class ProductRepository {
                 emoji: '🥖', 
                 descuento: 0, 
                 unidadMinima: 1,
-                descripcion: 'Auténtico pan francés crujiente'
+                descripcion: 'Auténtico pan francés crujiente por fuera, suave por dentro. Elaborado artesanalmente.'
             },
             { 
                 id: 3, 
@@ -35,10 +33,8 @@ class ProductRepository {
                 emoji: '🧄', 
                 descuento: 5, 
                 unidadMinima: 1,
-                descripcion: 'Pan con ajo natural'
+                descripcion: 'Pan con ajo natural, mantequilla fresca y hierbas aromáticas. ¡Irresistible!'
             },
-            
-            // Dulces
             { 
                 id: 4, 
                 nombre: 'Croissant', 
@@ -47,7 +43,7 @@ class ProductRepository {
                 emoji: '🥐', 
                 descuento: 0, 
                 unidadMinima: 1,
-                descripcion: 'Croissant de hojaldre perfecto'
+                descripcion: 'Croissant de hojaldre perfecto, crujiente y mantecoso. Ideal para el desayuno.'
             },
             { 
                 id: 5, 
@@ -57,7 +53,7 @@ class ProductRepository {
                 emoji: '🍩', 
                 descuento: 0, 
                 unidadMinima: 1,
-                descripcion: 'Delicioso donut cubierto de chocolate'
+                descripcion: 'Delicioso donut cubierto de chocolate derretido. La tentación perfecta.'
             },
             { 
                 id: 6, 
@@ -67,10 +63,8 @@ class ProductRepository {
                 emoji: '🧁', 
                 descuento: 10, 
                 unidadMinima: 1,
-                descripcion: 'Muffin casero con arándanos frescos'
+                descripcion: 'Muffin casero con arándanos frescos. Suave, húmedo y delicioso.'
             },
-            
-            // Galletas
             { 
                 id: 7, 
                 nombre: 'Galletas de Avena', 
@@ -79,7 +73,7 @@ class ProductRepository {
                 emoji: '🍪', 
                 descuento: 0, 
                 unidadMinima: 1,
-                descripcion: 'Galletas crujientes de avena'
+                descripcion: 'Galletas crujientes de avena con toque de miel. Saludable y sabrosa.'
             },
             { 
                 id: 8, 
@@ -89,7 +83,7 @@ class ProductRepository {
                 emoji: '🍫', 
                 descuento: 0, 
                 unidadMinima: 1,
-                descripcion: 'Galletas con chips de chocolate'
+                descripcion: 'Galletas con chips de chocolate belga. El clásico favorito de todos.'
             },
             { 
                 id: 9, 
@@ -99,7 +93,7 @@ class ProductRepository {
                 emoji: '🌾', 
                 descuento: 0, 
                 unidadMinima: 1,
-                descripcion: 'Galletas integrales saludables'
+                descripcion: 'Galletas integrales saludables. Con fibra y sabor natural.'
             }
         ];
 
@@ -112,7 +106,7 @@ class ProductRepository {
                 emoji: '📦', 
                 descuento: 15, 
                 unidadMinima: 1,
-                descripcion: 'Caja de 12 panes integrales'
+                descripcion: 'Caja de 12 panes integrales frescos. Ideal para cafeterías y negocios.'
             },
             { 
                 id: 11, 
@@ -122,7 +116,7 @@ class ProductRepository {
                 emoji: '📦', 
                 descuento: 20, 
                 unidadMinima: 1,
-                descripcion: 'Caja de 24 croissants frescos'
+                descripcion: 'Caja de 24 croissants frescos. Perfectos para eventos y reuniones.'
             },
             { 
                 id: 12, 
@@ -132,7 +126,7 @@ class ProductRepository {
                 emoji: '📦', 
                 descuento: 25, 
                 unidadMinima: 1,
-                descripcion: 'Caja de 50 galletas surtidas'
+                descripcion: 'Caja de 50 galletas surtidas. Variedad y cantidad para satisfacer.'
             },
             { 
                 id: 13, 
@@ -142,7 +136,7 @@ class ProductRepository {
                 emoji: '🎁', 
                 descuento: 18, 
                 unidadMinima: 1,
-                descripcion: 'Surtido de 30 productos premium'
+                descripcion: 'Surtido de 30 productos premium. Lo mejor de cada categoría.'
             }
         ];
     }

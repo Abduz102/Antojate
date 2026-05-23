@@ -1,6 +1,5 @@
 // ============================================
-// RENDERIZADOR DE PRODUCTOS
-// Single Responsibility Principle
+// RENDERIZADOR MEJORADO
 // ============================================
 
 class ProductRenderer {
@@ -58,5 +57,4 @@ class ProductRenderer {
     }
 }
 
-// Instancia global del renderer
 const ProductRenderer = new ProductRenderer(new ProductRepository());

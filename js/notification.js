@@ -1,5 +1,5 @@
 // ============================================
-// SISTEMA DE NOTIFICACIONES
+// NOTIFICACIONES
 // ============================================
 
 class NotificationService {

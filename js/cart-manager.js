@@ -1,6 +1,5 @@
 // ============================================
-// GESTOR DEL CARRITO
-// Single Responsibility Principle
+// CARRITO MEJORADO
 // ============================================
 
 class CartManager {
@@ -70,5 +69,4 @@ class CartManager {
     }
 }
 
-// Instancia global del carrito
 const CartManager = new CartManager();

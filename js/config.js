@@ -1,5 +1,5 @@
 // ============================================
-// CONFIGURACIÓN DE LA APLICACIÓN
+// CONFIGURACIÓN ACTUALIZADA
 // ============================================
 
 const CONFIG = {
@@ -7,7 +7,6 @@ const CONFIG = {
     ANIMATION_DURATION: 300,
     NOTIFICATION_TIMEOUT: 3000,
     
-    // Textos
     MESSAGES: {
         ADDED_TO_CART: '✅ Agregado al carrito',
         REMOVED_FROM_CART: '❌ Eliminado del carrito',
@@ -16,7 +15,6 @@ const CONFIG = {
         MIN_QUANTITY: '⚠️ Cantidad mínima',
     },
     
-    // Colores
     COLORS: {
         primary: '#D4845C',
         secondary: '#F4A460',
@@ -26,7 +24,6 @@ const CONFIG = {
     }
 };
 
-// Función auxiliar para escapar HTML
 function escapeHTML(text) {
     const div = document.createElement('div');
     div.textContent = text;

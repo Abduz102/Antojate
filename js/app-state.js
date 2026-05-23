@@ -1,5 +1,5 @@
 // ============================================
-// ESTADO GLOBAL DE LA APLICACIÓN
+// ESTADO GLOBAL MEJORADO
 // ============================================
 
 class AppState {
@@ -80,17 +80,7 @@ class AppState {
         }
 
         CartManager.addItem(product, quantity);
-        this.updateCartUI();
+        CartUI.updateCartUI();
         NotificationService.success(`${CONFIG.MESSAGES.ADDED_TO_CART} - ${product.nombre}`);
     }
-
-    static updateCartUI() {
-        const contador = document.getElementById('carrito-count');
-        if (contador) {
-            contador.textContent = CartManager.getTotalQuantity();
-        }
-    }
 }
-
-// Función global para acceso desde HTML
-const AppState = AppState;
