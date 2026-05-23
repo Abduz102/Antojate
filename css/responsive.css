@@ -1,0 +1,163 @@
+/* ============================================
+   ESTILOS RESPONSIVE - ANTOJATE
+   Diseño para todos los dispositivos
+   ============================================ */
+
+@media (max-width: 1024px) {
+    .empresas__content {
+        grid-template-columns: 1fr;
+    }
+
+    .productos__grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar__menu {
+        gap: 1rem;
+        font-size: 0.9rem;
+    }
+
+    .nav-link {
+        padding: 0.4rem 0.8rem;
+    }
+
+    .hero__content h2 {
+        font-size: 2rem;
+    }
+
+    .hero__content p {
+        font-size: 1rem;
+    }
+
+    .hero {
+        height: 350px;
+    }
+
+    .tipo-cliente__cards {
+        grid-template-columns: 1fr;
+    }
+
+    .productos__grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
+
+    .modal__content {
+        max-width: 90%;
+        padding: 1.5rem;
+    }
+
+    .empresas__info h3 {
+        font-size: 1.3rem;
+    }
+
+    .productos h2,
+    .empresas h2,
+    .tipo-cliente h2 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        font-size: 14px;
+    }
+
+    .navbar__brand h1 {
+        font-size: 1.3rem;
+    }
+
+    .navbar__menu {
+        gap: 0.5rem;
+    }
+
+    .nav-link {
+        padding: 0.3rem 0.5rem;
+        font-size: 0.8rem;
+    }
+
+    .hero__content h2 {
+        font-size: 1.5rem;
+    }
+
+    .hero__content p {
+        font-size: 0.95rem;
+    }
+
+    .hero {
+        height: 300px;
+    }
+
+    .productos__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .filtros {
+        gap: 0.5rem;
+    }
+
+    .filtro-btn {
+        padding: 8px 12px;
+        font-size: 0.85rem;
+    }
+
+    .producto__imagen {
+        font-size: 3rem;
+        height: 150px;
+    }
+
+    .tipo-cliente__card h3 {
+        font-size: 1.2rem;
+    }
+
+    .tipo-cliente__card p {
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    .modal__content {
+        max-width: 95%;
+        padding: 1rem;
+    }
+
+    .carrito__item {
+        padding: 0.8rem;
+        gap: 0.5rem;
+    }
+
+    .carrito__eliminar {
+        padding: 4px 8px;
+        font-size: 0.75rem;
+    }
+
+    .notificacion {
+        bottom: 1rem;
+        right: 1rem;
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .contacto__info p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 320px) {
+    .navbar__brand h1 {
+        font-size: 1.1rem;
+    }
+
+    .nav-link {
+        font-size: 0.7rem;
+        padding: 0.2rem 0.3rem;
+    }
+
+    #carrito-count {
+        display: none;
+    }
+}

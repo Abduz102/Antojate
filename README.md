@@ -1,189 +1,175 @@
 # 🥐 Antojate - Panadería Premium
 
-Una tienda web moderna y responsiva para la venta de productos de panadería, diseñada con principios SOLID y funcionamiento 100% en el navegador (sin servidor).
+Una tienda web moderna de panadería desarrollada con principios SOLID y arquitectura limpia. La aplicación funciona 100% en el navegador sin requerer un servidor backend.
 
-## 🎯 Características
+## ✨ Características Principales
 
-✨ **Características Principales:**
-- 🛍️ Catálogo de productos para clientes individuales
-- 🏢 Ofertas especiales para empresas pequeñas
-- 🛒 Carrito de compras con persistencia en localStorage
-- 📱 Diseño completamente responsivo
-- 🎨 Interfaz hermosa y moderna
-- ⚡ Sin dependencias externas (HTML/CSS/JavaScript vanilla)
-- 🔐 Todo funciona en el cliente (sin servidor)
+### Para Clientes Individuales
+- 🛍️ Catálogo de 9 productos diferentes
+- 🔍 Filtrado por categoría (Panes, Dulces, Galletas)
+- 🛒 Carrito de compras con localStorage
+- 💰 Precios competitivos
+- 📱 Diseño responsivo
 
-## 🏗️ Principios SOLID Aplicados
+### Para Empresas Pequeñas
+- 📦 Ofertas al por mayor (x12, x24, x50)
+- 💵 Descuentos por volumen (hasta 30%)
+- 🎁 Paquetes personalizados
+- 🚚 Entregas especiales
 
-### **S - Single Responsibility**
-- `ProductRepository`: Solo gestiona productos
-- `CarritoManager`: Solo gestiona el carrito
-- `ProductRenderer`: Solo renderiza productos
-- `UICarritoHandler`: Solo maneja UI del carrito
+### Características Generales
+- ✅ Notificaciones visuales
+- ✅ Carrito persistente (localStorage)
+- ✅ Validación de datos
+- ✅ Interfaz accesible
+- ✅ Animaciones suaves
+- ✅ Módulos JavaScript separados
+- ✅ CSS organizado en carpeta
 
-### **O - Open/Closed**
-- Clases abiertas a extensión (fácil agregar nuevas funcionalidades)
-- Cerradas a modificación (no necesita cambiar código existente)
-
-### **L - Liskov Substitution**
-- Las subclases mantienen el contrato de la clase base
-
-### **I - Interface Segregation**
-- Cada clase tiene una interfaz clara y específica
-- No hay métodos innecesarios
-
-### **D - Dependency Inversion**
-- Las clases dependen de abstracciones, no de implementaciones concretas
-- Inyección de dependencias en constructores
-
-## 📁 Estructura de Archivos
+## 📁 Estructura del Proyecto
 
 ```
 Antojate/
-├── index.html       # Estructura HTML
-├── styles.css       # Estilos CSS responsivos
-├── app.js          # Lógica de la aplicación con SOLID
-└── README.md       # Este archivo
+├── index.html
+├── css/
+│   ├── styles.css
+│   └── responsive.css
+├── js/
+│   ├── config.js
+│   ├── product-repository.js
+│   ├── cart-manager.js
+│   ├── product-renderer.js
+│   ├── notification.js
+│   ├── app-state.js
+│   └── app.js
+├── README.md
+└── .gitignore
 ```
 
 ## 🚀 Cómo Usar
 
-### Opción 1: Descarga Los Archivos
-1. Descarga los 3 archivos: `index.html`, `styles.css`, `app.js`
-2. Colócalos en la misma carpeta
-3. Abre `index.html` en tu navegador
-
-### Opción 2: Desde GitHub
+### 1. Local (Recomendado)
 ```bash
 git clone https://github.com/Abduz102/Antojate.git
 cd Antojate
 # Abre index.html en tu navegador
 ```
 
-## 💡 Funcionalidades
+### 2. Servidor Local
+```bash
+# Con Python 3
+python -m http.server 8000
 
-### Para Clientes Individuales
-- Ver catálogo de productos frescos
-- Filtrar por categoría (Panes, Dulces, Galletas)
-- Agregar productos al carrito
-- Ver total de compra en tiempo real
-- Procesamiento de compra simulado
+# Con Node.js
+http-server
 
-### Para Empresas Pequeñas
-- Ofertas especiales al por mayor
-- Descuentos por volumen
-- Paquetes personalizados
-- Precios competitivos
+# Luego abre: http://localhost:8000
+```
 
-### Carrito de Compras
-- Agregar/Eliminar productos
-- Modificar cantidades
-- Persistencia en localStorage (los datos se guardan)
-- Ver total actualizado
-- Procesar compra
+## 🏗️ Arquitectura SOLID
+
+### Single Responsibility (S)
+- `ProductRepository` - Solo gestiona productos
+- `CartManager` - Solo gestiona carrito
+- `ProductRenderer` - Solo renderiza en UI
+- `NotificationService` - Solo maneja notificaciones
+- `AppState` - Solo maneja estado global
+
+### Open/Closed (O)
+- Código abierto a extensión
+- Cerrado a modificación
+
+### Liskov Substitution (L)
+- Clases pueden reemplazarse correctamente
+
+### Interface Segregation (I)
+- Interfaces específicas
+- Solo métodos necesarios
+
+### Dependency Inversion (D)
+- Inyección de dependencias
+- Desacoplamiento de módulos
 
 ## 🎨 Personalización
 
 ### Cambiar Colores
-Edita las variables en `styles.css`:
+Edita `css/styles.css`:
 ```css
 :root {
-    --color-primary: #D4845C;      /* Color principal */
-    --color-secondary: #F4A460;    /* Color secundario */
-    --color-accent: #8B4513;       /* Color de acento */
-    --color-light: #FFF8DC;        /* Color claro */
-    --color-dark: #2C1810;         /* Color oscuro */
+    --color-primary: #D4845C;      /* Tu color */
+    --color-secondary: #F4A460;    /* Tu color */
+    /* ... más colores */
 }
 ```
 
 ### Agregar Productos
-Edita el arreglo en `app.js` en la clase `ProductRepository`:
+Edita `js/product-repository.js`:
 ```javascript
 this.productos = [
-    { id: 1, nombre: 'Tu Producto', precio: 2.50, categoria: 'panes', emoji: '🍞', descuento: 0, unidadMinima: 1 },
+    { 
+        id: 1, 
+        nombre: 'Tu Producto', 
+        precio: 2.50, 
+        categoria: 'panes', 
+        emoji: '🍞', 
+        descuento: 0, 
+        unidadMinima: 1,
+        descripcion: 'Descripción'
+    },
     // ... más productos
 ];
 ```
 
-### Cambiar Información de Contacto
-Edita la sección de contacto en `index.html`:
-```html
-<p>📍 Dirección: Tu Dirección</p>
-<p>📞 Teléfono: Tu Teléfono</p>
-```
+## 📊 Módulos JavaScript
 
-## 📊 Información Técnica
+- **config.js** - Configuración global
+- **product-repository.js** - Gestión de productos
+- **cart-manager.js** - Gestión del carrito
+- **product-renderer.js** - Renderización de productos
+- **notification.js** - Sistema de notificaciones
+- **app-state.js** - Estado global
+- **app.js** - Lógica principal
 
-### Stack Tecnológico
-- **HTML5**: Estructura semántica
-- **CSS3**: Flexbox y Grid para layout responsivo
-- **JavaScript Vanilla**: Lógica sin frameworks
+## 🛠️ Tecnologías
 
-### Almacenamiento
-- Los datos del carrito se guardan en `localStorage`
-- Los datos persisten incluso después de cerrar el navegador
+- HTML5
+- CSS3 (Flexbox, Grid)
+- JavaScript ES6+
+- LocalStorage API
 
-### Compatibilidad
-- ✅ Chrome, Firefox, Safari, Edge
-- ✅ Dispositivos móviles (iOS, Android)
-- ✅ Tablets
+## 📱 Responsivo
 
-## 🔧 Estructura de Clases
+- ✅ Desktop (1024px+)
+- ✅ Tablet (768px - 1024px)
+- ✅ Mobile (480px - 768px)
+- ✅ Pequeños (< 480px)
 
-```javascript
-ProductRepository        // Gestiona datos de productos
-├── obtenerProductos()
-├── obtenerProductosPorCategoria()
-└── obtenerProductoById()
+## 🐛 Troubleshooting
 
-CarritoManager          // Gestiona carrito y persistencia
-├── agregarItem()
-├── eliminarItem()
-├── calcularTotal()
-└── guardarAlStorage()
+### El carrito no guarda datos
+- Verifica que localStorage está habilitado
+- En modo incógnito no funciona
 
-ProductRenderer         // Renderiza productos en UI
-├── crearTarjetaProducto()
-└── renderizarProductos()
+### Los estilos no se ven
+- Verifica que `css/styles.css` existe
+- Recarga la página (Ctrl+Shift+R)
 
-UICarritoHandler        // Maneja UI del carrito
-├── mostrarCarrito()
-├── renderizarItems()
-└── mostrarNotificacion()
+### JavaScript no funciona
+- Abre la consola (F12)
+- Verifica que los scripts están en `js/`
 
-AppController           // Coordinador principal
-├── inicializar()
-├── filtrarProductos()
-└── procesarCompra()
-```
+## 📞 Soporte
 
-## 📱 Responsive Design
+- **Email:** info@antojate.com
+- **GitHub:** https://github.com/Abduz102/Antojate
+- **Issues:** https://github.com/Abduz102/Antojate/issues
 
-- **Desktop**: Grid de 4 columnas
-- **Tablet**: Grid de 2-3 columnas
-- **Mobile**: Grid de 1 columna
-- Navegación adaptativa
-
-## 🎓 Aprendizaje
-
-Este proyecto es perfecto para aprender:
-- Principios SOLID en JavaScript
-- Arquitectura limpia
-- Manejo de estado
-- localStorage en navegadores
-- CSS Flexbox y Grid
-- Diseño responsivo
-
-## 📝 Licencia
+## 📄 Licencia
 
 Libre para usar y modificar.
 
-## 💬 Contacto
+## ✍️ Autor
 
-Para preguntas o sugerencias, contacta a:
-- **Email**: info@antojate.com
-- **GitHub**: Abduz102
-
----
+**Abduz102** - Desarrollador Full Stack
 
 **Hecho con ❤️ para Antojate - Panadería Premium**

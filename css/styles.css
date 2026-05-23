@@ -1,0 +1,695 @@
+/* ============================================
+   ESTILOS PRINCIPALES - ANTOJATE PANADERÍA
+   Diseño Responsivo y Moderno
+   ============================================ */
+
+/* Variables de Color */
+:root {
+    --color-primary: #D4845C;
+    --color-secondary: #F4A460;
+    --color-accent: #8B4513;
+    --color-light: #FFF8DC;
+    --color-dark: #2C1810;
+    --color-success: #27AE60;
+    --color-warning: #E74C3C;
+    --color-info: #3498DB;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 8px 25px rgba(0, 0, 0, 0.15);
+    --transition: all 0.3s ease;
+    --transition-fast: all 0.2s ease;
+}
+
+/* Reset y Estilos Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--color-dark);
+    background-color: #FAFAF8;
+    line-height: 1.6;
+    letter-spacing: 0.3px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* ============================================
+   NAVEGACIÓN
+   ============================================ */
+
+.navbar {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--shadow-lg);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar__brand h1 {
+    font-size: 1.8rem;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.navbar__menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.carrito-link {
+    background-color: var(--color-accent);
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.carrito-link:hover {
+    background-color: #6B3410;
+    transform: translateY(-2px);
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+
+.hero {
+    background: linear-gradient(135deg, rgba(212, 132, 92, 0.9) 0%, rgba(244, 164, 96, 0.9) 100%),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><circle cx="100" cy="100" r="80" fill="rgba(255,255,255,0.1)"/><circle cx="1100" cy="500" r="120" fill="rgba(255,255,255,0.1)"/></svg>');
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    animation: fadeInDown 0.8s ease;
+}
+
+.hero__content h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero__content p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* ============================================
+   BOTONES
+   ============================================ */
+
+.btn {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn--primary {
+    background-color: var(--color-accent);
+    color: white;
+    box-shadow: var(--shadow);
+}
+
+.btn--primary:hover {
+    background-color: #6B3410;
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn--primary:active {
+    transform: translateY(-1px);
+}
+
+.btn--secondary {
+    background-color: var(--color-light);
+    color: var(--color-accent);
+    box-shadow: var(--shadow);
+}
+
+.btn--secondary:hover {
+    background-color: white;
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn--secondary:active {
+    transform: translateY(-1px);
+}
+
+/* ============================================
+   SECCIÓN TIPO DE CLIENTE
+   ============================================ */
+
+.tipo-cliente {
+    padding: 4rem 0;
+    background-color: white;
+}
+
+.tipo-cliente h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 3rem;
+    color: var(--color-accent);
+}
+
+.tipo-cliente__cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.tipo-cliente__card {
+    background: linear-gradient(135deg, var(--color-light) 0%, white 100%);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: var(--transition);
+}
+
+.tipo-cliente__card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+}
+
+.tipo-cliente__card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--color-primary);
+}
+
+.tipo-cliente__card p {
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+/* ============================================
+   SECCIÓN PRODUCTOS
+   ============================================ */
+
+.productos {
+    padding: 4rem 0;
+    background-color: #FAFAF8;
+}
+
+.productos h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    color: var(--color-accent);
+}
+
+.filtros {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.filtro-btn {
+    padding: 10px 20px;
+    border: 2px solid var(--color-primary);
+    background-color: white;
+    color: var(--color-primary);
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: var(--transition-fast);
+}
+
+.filtro-btn:hover {
+    background-color: var(--color-primary);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.filtro-btn.activo {
+    background-color: var(--color-primary);
+    color: white;
+    box-shadow: var(--shadow);
+}
+
+.productos__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+/* Tarjetas de Productos */
+
+.producto__card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    position: relative;
+}
+
+.producto__card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+
+.producto__imagen {
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(135deg, var(--color-light) 0%, var(--color-secondary) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.producto__imagen::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    0% { transform: translate(0, 0); }
+    50% { transform: translate(20px, 20px); }
+    100% { transform: translate(0, 0); }
+}
+
+.producto__info {
+    padding: 1.5rem;
+}
+
+.producto__nombre {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--color-accent);
+}
+
+.producto__descripcion {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.producto__precio {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+}
+
+.producto__cantidad {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.producto__cantidad label {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.producto__cantidad input {
+    width: 50px;
+    padding: 5px;
+    border: 2px solid var(--color-primary);
+    border-radius: 5px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.producto__cantidad input:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 5px rgba(139, 69, 19, 0.3);
+}
+
+.producto__btn {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.producto__btn:hover {
+    background-color: var(--color-accent);
+    transform: scale(1.05);
+}
+
+.producto__btn:active {
+    transform: scale(0.98);
+}
+
+.producto__descuento {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #E74C3C;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 0.85rem;
+}
+
+/* ============================================
+   SECCIÓN EMPRESAS
+   ============================================ */
+
+.empresas {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, var(--color-light) 0%, white 100%);
+}
+
+.empresas h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 3rem;
+    color: var(--color-accent);
+}
+
+.empresas__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.empresas__info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-primary);
+}
+
+.empresas__beneficios {
+    list-style: none;
+}
+
+.empresas__beneficios li {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: var(--color-dark);
+    padding-left: 2rem;
+    position: relative;
+}
+
+.empresas__beneficios li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--color-success);
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+/* ============================================
+   MODAL DEL CARRITO
+   ============================================ */
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal.activo {
+    display: flex;
+}
+
+.modal__content {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    max-width: 500px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.3s ease;
+}
+
+.modal__content h2 {
+    color: var(--color-accent);
+    margin-bottom: 1.5rem;
+}
+
+.modal__close {
+    float: right;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--color-accent);
+    transition: var(--transition-fast);
+}
+
+.modal__close:hover {
+    color: var(--color-warning);
+    transform: scale(1.2);
+}
+
+/* Carrito Items */
+
+.carrito__items {
+    margin: 2rem 0;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.carrito__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+    gap: 1rem;
+    transition: var(--transition-fast);
+}
+
+.carrito__item:hover {
+    background-color: #f9f9f9;
+}
+
+.carrito__item-info {
+    flex: 1;
+}
+
+.carrito__item-nombre {
+    font-weight: 600;
+    color: var(--color-accent);
+    margin-bottom: 0.3rem;
+}
+
+.carrito__item-precio {
+    color: var(--color-primary);
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+.carrito__eliminar {
+    background-color: var(--color-warning);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: var(--transition-fast);
+    font-size: 0.85rem;
+}
+
+.carrito__eliminar:hover {
+    background-color: #c0392b;
+    transform: scale(1.05);
+}
+
+.carrito__total {
+    text-align: right;
+    padding: 1rem 0;
+    border-top: 2px solid var(--color-primary);
+    margin-top: 1rem;
+}
+
+.carrito__total h3 {
+    font-size: 1.5rem;
+    color: var(--color-accent);
+}
+
+.carrito__vazio {
+    text-align: center;
+    padding: 2rem;
+    color: #999;
+    font-size: 1.1rem;
+}
+
+/* ============================================
+   SECCIÓN CONTACTO
+   ============================================ */
+
+.contacto {
+    padding: 4rem 0;
+    background-color: white;
+}
+
+.contacto h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    color: var(--color-accent);
+}
+
+.contacto__info {
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--color-dark);
+}
+
+.contacto__info p {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+.footer {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.footer p {
+    margin-bottom: 0.5rem;
+}
+
+/* ============================================
+   NOTIFICACIONES
+   ============================================ */
+
+.notificacion {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--color-success);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow-lg);
+    animation: slideIn 0.3s ease;
+    z-index: 999;
+    font-weight: 500;
+}
+
+/* ============================================
+   ANIMACIONES
+   ============================================ */
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(400px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

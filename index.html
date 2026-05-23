@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Antojate - Panadería Premium. Compra productos frescos y deliciosos online.">
+    <meta name="keywords" content="panadería, pan, dulces, galletas, compra online">
+    <title>Antojate - Panadería Premium</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- Navegación -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar__brand">
+                <h1>🥐 Antojate</h1>
+            </div>
+            <ul class="navbar__menu">
+                <li><a href="#inicio" class="nav-link">Inicio</a></li>
+                <li><a href="#productos" class="nav-link">Productos</a></li>
+                <li><a href="#empresas" class="nav-link">Para Empresas</a></li>
+                <li><a href="#contacto" class="nav-link">Contacto</a></li>
+                <li><a href="#" id="carrito-toggle" class="nav-link carrito-link">🛒 Carrito (<span id="carrito-count">0</span>)</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero__content">
+            <h2>Bienvenido a Antojate</h2>
+            <p>La mejor panadería artesanal con productos frescos y deliciosos</p>
+            <button class="btn btn--primary" onclick="document.getElementById('productos').scrollIntoView({behavior: 'smooth'})">
+                Explorar Productos
+            </button>
+        </div>
+    </section>
+
+    <!-- Sección de Clientes vs Empresas -->
+    <section class="tipo-cliente">
+        <div class="container">
+            <h2>¿Cómo deseas comprar?</h2>
+            <div class="tipo-cliente__cards">
+                <div class="tipo-cliente__card">
+                    <h3>👤 Cliente Individual</h3>
+                    <p>Compra productos frescos para ti y tu familia</p>
+                    <button class="btn btn--secondary" onclick="AppState.mostrarClientes()">Ver Catálogo</button>
+                </div>
+                <div class="tipo-cliente__card">
+                    <h3>🏢 Empresas Pequeñas</h3>
+                    <p>Soluciones al por mayor con precios especiales</p>
+                    <button class="btn btn--secondary" onclick="AppState.mostrarEmpresas()">Ofertas Corporativas</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Productos para Clientes -->
+    <section id="productos" class="productos">
+        <div class="container">
+            <h2>Nuestro Catálogo</h2>
+            <div class="filtros">
+                <button class="filtro-btn activo" onclick="AppState.filtrarProductos('todos')">Todos</button>
+                <button class="filtro-btn" onclick="AppState.filtrarProductos('panes')">Panes</button>
+                <button class="filtro-btn" onclick="AppState.filtrarProductos('dulces')">Dulces</button>
+                <button class="filtro-btn" onclick="AppState.filtrarProductos('galletas')">Galletas</button>
+            </div>
+            <div id="productos-grid" class="productos__grid">
+                <!-- Los productos se cargarán aquí con JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Empresas -->
+    <section id="empresas" class="empresas">
+        <div class="container">
+            <h2>Soluciones para Empresas</h2>
+            <div class="empresas__content">
+                <div class="empresas__info">
+                    <h3>Beneficios para tu Negocio</h3>
+                    <ul class="empresas__beneficios">
+                        <li>✅ Descuentos por volumen hasta 30%</li>
+                        <li>✅ Entregas personalizadas</li>
+                        <li>✅ Productos frescos garantizados</li>
+                        <li>✅ Atención dedicada</li>
+                        <li>✅ Planes de pago flexibles</li>
+                    </ul>
+                </div>
+                <div id="productos-empresas-grid" class="productos__grid">
+                    <!-- Productos corporativos se cargarán aquí -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal del Carrito -->
+    <div id="carrito-modal" class="modal">
+        <div class="modal__content">
+            <button class="modal__close" onclick="CartManager.closeCart()">&times;</button>
+            <h2>Tu Carrito de Compras</h2>
+            <div id="carrito-items" class="carrito__items">
+                <!-- Items del carrito se mostrarán aquí -->
+            </div>
+            <div class="carrito__total">
+                <h3>Total: $<span id="carrito-total">0.00</span></h3>
+            </div>
+            <button class="btn btn--primary" onclick="CartManager.checkout()">Procesar Compra</button>
+            <button class="btn btn--secondary" onclick="CartManager.closeCart()">Continuar Comprando</button>
+        </div>
+    </div>
+
+    <!-- Sección de Contacto -->
+    <section id="contacto" class="contacto">
+        <div class="container">
+            <h2>Contacto</h2>
+            <div class="contacto__info">
+                <p>📍 Dirección: Calle Principal 123, Tu Ciudad</p>
+                <p>📞 Teléfono: +1 (555) 123-4567</p>
+                <p>📧 Email: info@antojate.com</p>
+                <p>🕐 Horario: Lunes - Sábado 7:00 AM - 8:00 PM</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Antojate - Panadería Premium. Todos los derechos reservados.</p>
+            <p>Hecho con ❤️ para ti</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/config.js"></script>
+    <script src="js/product-repository.js"></script>
+    <script src="js/cart-manager.js"></script>
+    <script src="js/product-renderer.js"></script>
+    <script src="js/notification.js"></script>
+    <script src="js/app-state.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
